@@ -1,97 +1,98 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-# 📝 Desafio Técnico Backend - NestJS
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## 🔧 Tecnologias obrigatórias:
-- Node.js 22
-- NestJS
-- TypeORM (com SQLite ou PostgreSQL local)
-- Swagger (documentação dos endpoints)
-- Testes unitários (Jest)
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## 📑 Descrição do Desafio
-Desenvolver uma API REST para **gerenciamento de uma biblioteca simples**, com cadastro de livros e autores.
+## Description
 
-## 📚 Entidades
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-### Autor
-- `id` (UUID)
-- `nome` (string, obrigatório)
-- `dataNascimento` (date, obrigatório)
-- `nacionalidade` (string, opcional)
-- Relacionamento: 1 autor pode ter vários livros.
+## Project setup
 
-### Livro
-- `id` (UUID)
-- `titulo` (string, obrigatório)
-- `descricao` (string, opcional)
-- `anoPublicacao` (number, obrigatório)
-- `autorId` (relacionado ao autor)
-- Relacionamento: cada livro pertence a 1 autor.
-
-## 🔗 Relacionamento
-- **1 Autor tem muitos livros.**
-- **1 Livro pertence a 1 Autor.**
-
-## 🔥 Funcionalidades obrigatórias
-
-### Autor:
-- Criar autor
-- Listar autores
-- Buscar autor por ID
-- Atualizar autor
-- Deletar autor
-
-### Livro:
-- Criar livro (sempre vinculado a um autor)
-- Listar livros
-- Buscar livro por ID
-- Atualizar livro
-- Deletar livro
-
-## 🛠️ Regras de negócio
-- Não é possível cadastrar um livro sem um autor válido.
-- Ao deletar um autor, os livros dele também são excluídos (cascade delete).
-- Não permitir autores com nomes duplicados.
-
-## 📑 Documentação Swagger
-- Todos os endpoints documentados no Swagger (`/api` ou `/swagger`).
-
-## ✅ Testes unitários obrigatórios
-- Pelo menos testes dos services de livro e autor.
-- Teste de sucesso e teste de erro (ex.: tentativa de criar livro sem autor válido).
-
-## 🚀 O que será avaliado?
-- Organização do código.
-- Estruturação dos módulos, services e controllers.
-- Uso correto de TypeORM (entidades e relações).
-- Clareza e completude da documentação Swagger.
-- Qualidade dos testes unitários.
-- Boas práticas de desenvolvimento.
-
-## 🔗 Extras (não obrigatório, mas diferencial)
-- Uso de DTOs bem estruturados.
-- Validações com `class-validator`.
-- Tratamento de erros com filtros personalizados.
-- Uso de pipes e interceptors.
-
-## 📤 Entrega
-
-- Cada participante deve realizar o commit da sua solução em uma **branch separada com seu nome ou identificador**, dentro do repositório oficial do desafio.
-
-**Exemplos de nome da branch:**
-```
-feature/nome-sobrenome
-```
-ou
-```
-dev/seu-nome
+```bash
+$ npm install
 ```
 
-- Após finalizar, deve abrir um **Pull Request** para a branch `main` ou `develop` do repositório.
+## Compile and run the project
 
-- O Pull Request deve conter na descrição:
-  - Um breve resumo das decisões tomadas.
-  - Quais partes foram mais fáceis ou mais desafiadoras.
-  - Quais melhorias você faria se tivesse mais tempo.
+```bash
+# development
+$ npm run start
 
-> ✅ Trabalhar em uma branch dentro do mesmo repositório facilita centralizar a avaliação, além de permitir comparar diretamente as soluções dos participantes.
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Run tests
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Deployment
+
+When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
